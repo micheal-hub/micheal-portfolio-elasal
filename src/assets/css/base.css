@@ -1,0 +1,430 @@
+/*********************************** THE MAIN CSS **********************************/
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.right-to-left {
+  direction: rtl;
+  font-family: 'Cairo', sans-serif, Arial, Helvetica;
+}
+
+/******** THE DEFAULT DIMANSIONS/TRANSITIONS *********/
+:root {
+  --height-header: 90px;
+  --margin-T-main: var(--height-header);
+  --height-section: calc(100vh - var(--height-header));
+  --general-padding: 0 20px;
+  --dropMenu-padding: 20px;
+  --footer-padding: 20px;
+}
+
+/******** THE DEFAULT COLORS *********/
+:root {
+  /* HEADER */
+  /* header */
+  --bc-header: #00712d;
+  /* logo */
+  --c-border-logo: #00712d;
+  /* link */
+  --c-link: #fccd2a;
+  --c-link-hover: #bda758;
+  --c-link-active: #bda758;
+  /* search */
+  --bc-search: #ffffff;
+  --c-placeholder-search: #00712d;
+  --bc-search-button: #00712d;
+  --bc-search-button-hover: #103b21;
+  --c-search-icon: #ffffff;
+  /* language */
+  --bc-language: #ffffff;
+  --c-language-name: #00712d;
+  --c-language-icon: #00712d;
+  --bc-language-hover: #00712d;
+  --c-language-hover: #ffffff;
+  --bc-language-border: #00712d;
+  /* theme */
+  --bc-theme: #ffffff;
+  --bc-theme-icon: #00712d;
+  --c-theme-icon: #ffffff;
+  /* social call */
+  --bc-social-call: #ffffff;
+  --c-social-call: #00712d;
+  --bc-alert: #00712d99;
+  --c-alert: #000000;
+  --c-border-alert: #000000;
+  /* menu */
+  --toggle-menu-color: #ffffff;
+  /* MAIN */
+  /* primary section */
+  --bc-primary-section: #00712d;
+  --c-primary-section: #c5ad55;
+  /* secondary section */
+  --bc-secondary-section: #e6dcdc;
+  --c-secondary-section: #00712d;
+  /* benefits section */
+  --c-title-benefits: #bda758;
+  --c-self-benefit: #e0b000;
+  --c-des-benefit: #bda758;
+  /* FOOTER */
+  --bc-footer: #00712d;
+  --c-footer: #fccd2a;
+  /* SCROLL BAR */
+  --bc-scrollbar-button: #00712d;
+  --bc-scrollbar-button-hover: #00712d;
+  --bc--scrollbar-track: #ada9a9;
+  --bc--scrollbar-track-hover: #ada9a9;
+  --bc-scrollbar-thumb: #00712d;
+  --bc-scrollbar-thumb-hover: #00712d;
+}
+
+body:has(.dark) {
+  /* HEADER */
+  /* header */
+  --bc-header: #185831;
+  /* logo */
+  --c-border-logo: #185831;
+  /* link */
+  --c-link: #ffffff;
+  --c-link-hover: #bda758;
+  --c-link-active: #bda758;
+  /* search */
+  --bc-search: #ffffff;
+  --c-placeholder-search: #aaa;
+  --bc-search-button: #185831;
+  --bc-search-button-hover: #103b21;
+  --c-search-icon: #ffffff;
+  /* language */
+  --bc-language: #ffffff;
+  --c-language-name: #185831;
+  --c-language-icon: #185831;
+  --bc-language-hover: #185831;
+  --c-language-hover: #ffffff;
+  --bc-language-border: #6d6666;
+  /* theme */
+  --bc-theme: #ffffff;
+  --bc-theme-icon: #185831;
+  --c-theme-icon: #ffffff;
+  /* social call */
+  --bc-social-call: #ffffff;
+  --c-social-call: #185831;
+  --bc-alert: #18583199;
+  --c-alert: #000000;
+  --c-border-alert: #ffffff;
+  /* menu */
+  --toggle-menu-color: #ffffff;
+  /* MAIN */
+  /* primary section */
+  --bc-primary-section: #185831;
+  --c-primary-section: #ffffff;
+  /* secondary section */
+  --bc-secondary-section: #e6dcdc;
+  --c-secondary-section: #185831;
+  /* benefits section */
+  --c-title-benefits: #ffffff;
+  --c-self-benefit: #bda758;
+  --c-des-benefit: #ffffff;
+  /* FOOTER */
+  --bc-footer: #185831;
+  --c-footer: #ffffff;
+  /* SCROLL BAR */
+  --bc-scrollbar-button: #185831;
+  --bc-scrollbar-button-hover: #185831;
+  --bc-scrollbar-track: #ada9a9;
+  --bc-scrollbar-track-hover: #ada9a9;
+  --bc-scrollbar-thumb: #185831;
+  --bc-scrollbar-thumb-hover: #185831;
+}
+
+/********************************** Scrollbar Styling **********************************/
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-button {
+  background: var(--bc-scrollbar-button);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+::-webkit-scrollbar-button:hover {
+  background: var(--hover-link);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bc-scrollbar-track);
+}
+
+::-webkit-scrollbar-track:hover {
+  background: var(--bc-scrollbar-track-hover);
+}
+
+/* Style the track piece (the part of the track not covered by the thumb) track and track:hover */
+/*::-webkit-scrollbar-track-piece {
+  background: #c5bfbf;  Background color of the track piece 
+}*/
+
+::-webkit-scrollbar-thumb {
+  background: var(--bc-scrollbar-thumb);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bc-scrollbar-thumb-hover);
+}
+
+/* color palette from <https://github.com/vuejs/theme> */
+/*:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}*/
+
+/* semantic color variables for this project */
+/*:root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}*/
+
+/*
+header {
+  line-height: 1.5;
+  max-height: 100vh;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+nav {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+nav a.router-link-exact-active {
+  color: var(--color-text);
+}
+
+nav a.router-link-exact-active:hover {
+  background-color: transparent;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0 1rem;
+  border-left: 1px solid var(--color-border);
+}
+
+nav a:first-of-type {
+  border: 0;
+}
+
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
+
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    text-align: left;
+    margin-left: -1rem;
+    font-size: 1rem;
+
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
+
+  .ba-config {
+    background-image: url('@/assets/media/image/landing1.jpg');
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    background-blend-mode: overlay; blend is يمزج 
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-clip: border-box;
+    animation: changeBackground 30s infinite;  Change every 3 seconds 
+  }
+
+  @keyframes changeBackground {
+  0% {
+    background-image: url('@/assets/media/image/landing1.jpg');
+  }
+  11% {
+    background-image: url('@/assets/media/image/landing1.jpg');
+  }
+  22% {
+    background-image: url('@/assets/media/image/landing1.jpg');
+  }
+  33% {
+    background-image: url('@/assets/media/image/landing2.jpg');
+  }
+  44% {
+    background-image: url('@/assets/media/image/landing2.jpg');
+  }
+  55% {
+    background-image: url('@/assets/media/image/landing2.jpg');
+  }
+  66% {
+    background-image: url('@/assets/media/image/landing3.jpg');
+  }
+  77% {
+    background-image: url('@/assets/media/image/landing3.jpg');
+  }
+  88% {
+    background-image: url('@/assets/media/image/landing3.jpg');
+  }
+  100% {
+    background-image: url('@/assets/media/image/landing1.jpg');
+  }
+}
+}
+
+border-radius: 20px;  All corners will have a radius of 20px
+border-radius: 10px 20px 30px 40px;  TL, TR, BR, BL
+border-radius: 50px 25px;  All corners will have a radius of 50px horizontally and 25px vertically   
+border-top-left-radius: 2em 5em;
+border-top-right-radius: 2em 5em;
+border-bottom-right-radius: 2em 5em;
+border-bottom-left-radius: 2em 5em; 
+*/
+
+/* 
+** npm create vue@latest
+** cd best
+** npm install
+** npm run format
+** npm run dev
+** npm install axios
+** npm install vuetify
+** npm install mitt
+** npm install boxicons
+** npm install -D sass sass-loader
+** npm install socket.io-client
+** npm install firebase
+** npm install -g firebase-tools => Firebase CLI (a command line tool) to install the CLI or update to the latest CLI version.
+** firebase login =>  You can deploy now or later. To deploy now, open a terminal window, 
+                      then navigate to or create a root directory for your web app.
+                      Sign in to Google
+** firebase init => Initiate your project > Run this command from your app's root directory:  
+** firebase deploy => When you're ready, deploy your web app > Put your static files (e.g., HTML, CSS, JS) in your app's 
+                                                                deploy directory (the default is "public"). 
+                                                                Then, run this command from your app's root directory:                    
+** npm install -S vue3-google-map
+ */
+
+/* 
+WOW JS INITIALIZATION
+
+boxClass: Class name that reveals the hidden box when user scrolls.
+animateClass: Class name that triggers the CSS animations (’animated’ by default for the animate.css library)
+offset: Define the distance between the bottom of browser viewport and the top of hidden box.
+        When the user scrolls and reach this distance the hidden box is revealed.
+mobile: Turn on/off wow.js on mobile devices.
+live: consatantly check for new WOW elements on the page.
+
+WOW JS ATTRIBUTES
+
+data-wow-duration: Change the animation duration
+data-wow-delay: Delay before the animation starts
+data-wow-offset: Distance to start the animation (related to the browser bottom)
+data-wow-iteration: Number of times the animation is repeated
+*/
